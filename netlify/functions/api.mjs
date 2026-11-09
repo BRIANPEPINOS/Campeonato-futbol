@@ -2,8 +2,8 @@ import { createHmac, randomUUID } from 'node:crypto';
 
 const COOKIE='__Host-copa_session';
 const publicActions=new Set(['getData','login','session']);
-const privateActions=new Set(['logout','addTeam','addPlayer','createMatch','saveMatch']);
-const expectedArgs={getData:0,session:0,login:1,logout:0,addTeam:1,addPlayer:1,createMatch:1,saveMatch:1};
+const privateActions=new Set(['logout','addTeam','addPlayer','createMatch','saveMatch','updateTeam','deleteTeam','updatePlayer','deletePlayer','deleteMatch']);
+const expectedArgs={getData:0,session:0,login:1,logout:0,addTeam:1,addPlayer:1,createMatch:1,saveMatch:1,updateTeam:1,deleteTeam:1,updatePlayer:1,deletePlayer:1,deleteMatch:1};
 const headers={'Content-Type':'application/json; charset=utf-8','Cache-Control':'no-store','X-Content-Type-Options':'nosniff','Vary':'Origin'};
 function json(body,status=200,extra={}) { return new Response(JSON.stringify(body),{status,headers:{...headers,...extra}}); }
 function sessionToken(request) {
