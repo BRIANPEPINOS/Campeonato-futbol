@@ -1,0 +1,11 @@
+{
+  "name": "campeonato-netlify",
+  "version": "3.0.0",
+  "private": true,
+  "description": "Campeonato con equipos dinámicos, Google Sheets y Netlify Functions",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "test": "node tests/test.cjs && node --test tests/proxy.test.mjs",
+    "check": "node --check public/app.js && node --check netlify/functions/api.mjs"
+  }
+}
